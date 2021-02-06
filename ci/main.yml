@@ -91,7 +91,7 @@ stages:
                 sed -i -e "s\repository=.*\repository=https://bizair.pkgs.visualstudio.com/ccf3fa37-3b57-498c-8b43-231e00d92672/_packaging/ray-feed/pypi/upload\g" $PYPIRC_PATH
               fi
               cat $PYPIRC_PATH
-              UPLOAD_OUTPUT=$(python -m twine upload -r "ray-feed" --config-file $(PYPIRC_PATH) $BUILD_SOURCESDIRECTORY$WHEELS_PATH)
+              UPLOAD_OUTPUT=$(python -m twine upload --verbose -r "ray-feed" --config-file $(PYPIRC_PATH) $BUILD_SOURCESDIRECTORY$WHEELS_PATH)
               echo $UPLOAD_OUTPUT
               if [[ $UPLOAD_OUTPUT == *"HTTPError"* ]]; then
                 echo "Error detected after upload."
