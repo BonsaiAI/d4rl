@@ -6,7 +6,6 @@ setup(
     version='1.1.0.dev0',
     install_requires=['gym', 
                       'numpy', 
-                      'mujoco_py', 
                       'pybullet',
                       'h5py', 
                       'termcolor', # adept_envs dependency
